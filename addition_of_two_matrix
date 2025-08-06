@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int rows, cols,rows1, cols1;
+
+
+    cout << "Enter the number of rows: ";
+    cin >> rows;
+    cout << "Enter the number of columns: ";
+    cin >> cols;
+    
+    cout << "Enter the number of rows m2: ";
+    cin >> rows1;
+    cout << "Enter the number of columns m2: ";
+    cin >> cols1;
+    
+    if(rows != rows1|| cols != cols1){
+        cout<<"the rows and columns does not match therefore the addition will not be possible";
+        return 0;
+    }
+    
+    int matrix1[rows][cols];
+    int matrix2[rows][cols];
+    int sumMatrix[rows][cols];
+
+   cout << "\nEnter elements for Matrix 1:\n";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cout << "Enter element at (" << i + 1 << "," << j + 1 << "): ";
+            cin >> matrix1[i][j];
+        }
+    }
+    cout << "\nEnter elements for Matrix 2:\n";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cout << "Enter element at (" << i + 1 << "," << j + 1 << "): ";
+            cin >> matrix2[i][j];
+        }
+    }
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            sumMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+
+
+    cout << "\nSum of the matrices:\n";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cout << sumMatrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
